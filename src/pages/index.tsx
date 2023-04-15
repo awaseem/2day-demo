@@ -12,7 +12,7 @@ export default function Home() {
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            className="flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://www.ambitionsoftware.dev/"
             target="_blank"
             rel="noopener noreferrer"
@@ -22,13 +22,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative flex flex-col place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:from-white before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:bg-gradient-to-br before:dark:from-transparent before:to-blue-700/10 after:from-sky-900 after:via-[#0141ff]/40 before:lg:h-[360px]">
+      <div className="relative flex flex-col text-center place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:from-white before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:bg-gradient-to-br before:dark:from-transparent before:to-blue-700/10 after:from-sky-900 after:via-[#0141ff]/40 before:lg:h-[360px]">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Generate podcasts from RSS feeds
+          Create Engaging Content from RSS Feeds
         </h1>
         <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          Transform Your Blog or Website Content into Professional Podcasts with
+          Our Automated RSS Feed Tool. See examples below from Vox, The Verge
+          and Reddit
         </p>
         <a
           href="#"
