@@ -1,23 +1,38 @@
 import { Inter } from "next/font/google";
+import logo from "../../../public/vox_logo.jpg";
+import Image, { StaticImageData } from "next/image";
 
 export interface DemoProps {
   title: string;
   sourceLink: string;
   audioSrc: string;
   tagline: string;
+  imageImport: StaticImageData;
 }
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Demo({ title, sourceLink, audioSrc, tagline }: DemoProps) {
+export function Demo({
+  title,
+  sourceLink,
+  audioSrc,
+  tagline,
+  imageImport,
+}: DemoProps) {
   return (
     <div
       className="group rounded-lg border border-transparent px-5 py-4 transition-colors border-neutral-700"
       rel="noopener noreferrer"
     >
-      <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-        {title}
-      </h2>
+      <div className="flex flex-row items-center mb-3">
+        <Image
+          className="mr-3"
+          alt={`${title}-logo`}
+          width={24}
+          src={imageImport}
+        />
+        <h2 className={`${inter.className} text-2xl font-semibold`}>{title}</h2>
+      </div>
       <p className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}>
         {tagline}{" "}
         <a className="underline" href={sourceLink}>

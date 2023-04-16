@@ -2,6 +2,10 @@ import { getRedditData, getVergeData, getVoxData } from "@/utils/data";
 import { Demo } from "./components/demo";
 import { ApiResponse } from "@/utils/types";
 
+import voxLogo from "@/assets/vox_logo.jpg";
+import vergeLogo from "@/assets/verge_logo.png";
+import redditLogo from "@/assets/reddit_logo.png";
+
 interface HomeProps {
   voxData: ApiResponse;
   vergeData: ApiResponse;
@@ -78,18 +82,21 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
           title="Vox"
           sourceLink={voxData.data.source.url}
           tagline="The top stories from around with world."
+          imageImport={voxLogo}
         />
         <Demo
           audioSrc={vergeData.data.podcastFileUrl}
           title="The Verge"
           sourceLink={vergeData.data.source.url}
           tagline="All the hottest tech news rights now."
+          imageImport={vergeLogo}
         />
         <Demo
           audioSrc={redditData.data.podcastFileUrl}
           title="Reddit"
           sourceLink={redditData.data.source.url}
           tagline="The front page of the internet, dive into anything."
+          imageImport={redditLogo}
         />
       </div>
     </main>
