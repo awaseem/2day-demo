@@ -49,12 +49,14 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
 
       <div className="my-12 flex flex-col text-center place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:from-white before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:bg-gradient-to-br before:dark:from-transparent before:to-pink-700/10 after:from-red-900 after:via-[#0141ff]/40 before:lg:h-[360px]">
         <h1 className="mt-4 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Create Engaging Content from RSS Feeds
+          Press play on your writing
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-          Transform Your Blog or Website Content into Professional Podcasts with
-          Our Automated RSS Feed Tool. See examples below from Vox, The Verge
-          and Reddit
+          Transform your writing into engaging AI-generated podcasts. Ditch the
+          mics and sound-proof rooms, and tap into a new audience base without
+          the added effort. 2day converts your blogs and articles into audio
+          podcasts. See it in action. 👇
+          <br />
         </p>
         <a
           href="https://github.com/awaseem/2day-api"
