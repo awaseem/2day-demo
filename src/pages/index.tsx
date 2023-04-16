@@ -1,5 +1,5 @@
 import { getRedditData, getVergeData, getVoxData } from "@/utils/data";
-import { Demo } from "./components/demo";
+import { Demo } from "../components/demo";
 import { ApiResponse } from "@/utils/types";
 
 import voxLogo from "@/assets/vox_logo.jpg";
