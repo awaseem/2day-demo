@@ -1,6 +1,32 @@
+import { getRedditData, getVergeData, getVoxData } from "@/utils/data";
 import { Demo } from "./components/demo";
+import { ApiResponse } from "@/utils/types";
 
-export default function Home() {
+interface HomeProps {
+  voxData: ApiResponse;
+  vergeData: ApiResponse;
+  redditData: ApiResponse;
+}
+
+export async function getServerSideProps() {
+  const [voxData, vergeData, redditData] = await Promise.all([
+    getVoxData(),
+    getVergeData(),
+    getRedditData(),
+  ]);
+
+  return {
+    props: {
+      voxData,
+      vergeData,
+      redditData,
+    },
+  };
+}
+
+export default function Home({ voxData, vergeData, redditData }: HomeProps) {
+  console.log(voxData);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-16">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -50,19 +76,22 @@ export default function Home() {
 
       <div className="mb-32 grid text-center gap-8 lg:mb-0 lg:grid-cols-3 lg:text-left">
         <Demo
-          audioSrc="https://www.w3schools.com/tags/horse.mp3"
+          audioSrc={voxData.data.podcastFileUrl}
           title="Vox"
-          sourceLink="https://google.com"
+          sourceLink={voxData.data.source.url}
+          tagline="The top stories from around with world."
         />
         <Demo
-          audioSrc="https://www.w3schools.com/tags/horse.mp3"
+          audioSrc={vergeData.data.podcastFileUrl}
           title="The Verge"
-          sourceLink="https://google.com"
+          sourceLink={vergeData.data.source.url}
+          tagline="All the hottest tech news rights now."
         />
         <Demo
-          audioSrc="https://www.w3schools.com/tags/horse.mp3"
+          audioSrc={redditData.data.podcastFileUrl}
           title="Reddit"
-          sourceLink="https://google.com"
+          sourceLink={redditData.data.source.url}
+          tagline="The front page of the internet, dive into anything."
         />
       </div>
     </main>
