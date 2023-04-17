@@ -80,21 +80,21 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
         <Demo
           audioSrc={voxData.data.podcastFileUrl}
           title="Vox"
-          sourceLink={voxData.data.source.url}
+          sourceLink={voxData.data.source.sourceData.at(0)?.url}
           tagline="The top stories from around with world."
           imageImport={voxLogo}
         />
         <Demo
           audioSrc={vergeData.data.podcastFileUrl}
           title="The Verge"
-          sourceLink={vergeData.data.source.url}
+          sourceLink={vergeData.data.source.sourceData.at(0)?.url}
           tagline="All the hottest tech news rights now."
           imageImport={vergeLogo}
         />
         <Demo
           audioSrc={redditData.data.podcastFileUrl}
           title="Reddit"
-          sourceLink={redditData.data.source.url}
+          sourceLink={redditData.data.source.sourceData.at(0)?.url}
           tagline="The front page of the internet, dive into anything."
           imageImport={redditLogo}
         />

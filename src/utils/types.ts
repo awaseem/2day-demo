@@ -1,10 +1,3 @@
-interface Source {
-  id: string;
-  url: string;
-  createdAt: string;
-  accountId: string;
-}
-
 interface Data {
   id: string;
   content: string;
@@ -12,9 +5,19 @@ interface Data {
   accountId: string;
   sourceId: string;
   podcastFileUrl: string;
-  source: Source;
+  source: {
+    id: string;
+    createdAt: string;
+    accountId: string;
+    sourceData: {
+      id: string;
+      url: string;
+      type: string;
+      createdAt: string;
+      sourceId: string;
+    }[];
+  };
 }
-
 export interface ApiResponse {
   data: Data;
 }

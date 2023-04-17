@@ -4,10 +4,11 @@ import Image, { StaticImageData } from "next/image";
 
 export interface DemoProps {
   title: string;
-  sourceLink: string;
   audioSrc: string;
   tagline: string;
   imageImport: StaticImageData;
+
+  sourceLink?: string;
 }
 
 const inter = Inter({ subsets: ["latin"] });
