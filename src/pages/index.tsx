@@ -36,7 +36,7 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
         <p className="fixed left-0 top-0 flex w-full justify-center border-b pb-6 pt-8 backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:bg-zinc-800/30">
           📻 2day Demo
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-black via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://www.ambitionsoftware.dev/"
@@ -48,11 +48,11 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
         </div>
       </div>
 
-      <div className="my-12 flex flex-col text-center place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:from-white before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:bg-gradient-to-br before:dark:from-transparent before:to-pink-700/10 after:from-red-900 after:via-[#0141ff]/40 before:lg:h-[360px]">
-        <h1 className="mt-4 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <div className="my-12 flex flex-col text-center place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:bg-gradient-to-br before:from-transparent before:to-pink-700/10 after:from-red-900 after:via-[#0141ff]/40 before:lg:h-[360px]">
+        <h1 className="mt-4 mb-8 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6x text-white">
           Press play on your writing
         </h1>
-        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+        <p className="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 text-gray-400">
           Transform your writing into engaging AI-generated podcasts. Ditch the
           mics and sound-proof rooms, and tap into a new audience base without
           the added effort. 2day converts your blogs and articles into audio
@@ -84,8 +84,10 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
             "https://google.com",
           ]}
         />
-        <div className="flex justify-center items-center mx-10">
-          <p className="text-7xl">👉</p>
+        <div className="flex justify-center items-center mx-16 lg:my-10">
+          <div className="text-7xl hidden xl:block">👉</div>
+          <div className="text-7xl hidden xl:hidden sm:block">👇</div>
+          <div className="text-7xl sm:hidden">👇</div>
         </div>
         <div className="flex justify-center">
           <Demo
