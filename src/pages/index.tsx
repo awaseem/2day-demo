@@ -1,4 +1,9 @@
-import { getRedditData, getVergeData, getVoxData } from "@/utils/data";
+import {
+  getLinkExampleData,
+  getRedditData,
+  getVergeData,
+  getVoxData,
+} from "@/utils/data";
 import { Demo } from "../components/demo";
 import { ApiResponse } from "@/utils/types";
 
@@ -8,13 +13,15 @@ import redditLogo from "@/assets/reddit_logo.png";
 import { Links } from "@/components/links";
 
 interface HomeProps {
+  linkData: ApiResponse;
   voxData: ApiResponse;
   vergeData: ApiResponse;
   redditData: ApiResponse;
 }
 
 export async function getServerSideProps() {
-  const [voxData, vergeData, redditData] = await Promise.all([
+  const [linkData, voxData, vergeData, redditData] = await Promise.all([
+    getLinkExampleData(),
     getVoxData(),
     getVergeData(),
     getRedditData(),
@@ -22,6 +29,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      linkData,
       voxData,
       vergeData,
       redditData,
@@ -29,7 +37,12 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ voxData, vergeData, redditData }: HomeProps) {
+export default function Home({
+  linkData,
+  voxData,
+  vergeData,
+  redditData,
+}: HomeProps) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-16">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -77,23 +90,16 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
         </a>
       </div>
 
-      <div className="mb-8 flex flex-col text-center lg:flex-row lg:text-left">
-        <Links
-          urls={[
-            "https://www.vox.com/politics/2023/4/17/23686644/ralph-yarl-kansas-city-shooting",
-            "https://google.com",
-          ]}
-        />
+      <div className="mb-8 flex flex-col text-center lg:text-left">
+        <Links urls={linkData.data.source.sourceData.map(data => data.url)} />
         <div className="flex justify-center items-center mx-16 lg:my-10">
-          <div className="text-7xl hidden xl:block">👉</div>
-          <div className="text-7xl hidden xl:hidden sm:block">👇</div>
-          <div className="text-7xl sm:hidden">👇</div>
+          <div className="text-7xl">👇</div>
         </div>
         <div className="flex justify-center">
           <Demo
             title="...And create a podcast 🎤"
-            audioSrc={voxData.data.podcastFileUrl}
-            tagline="Using the links your pass, 2day will summarize the stories and generate a podcast."
+            audioSrc={linkData.data.podcastFileUrl}
+            tagline="Using the links you pass, 2day will summarize the stories and generate a podcast."
           />
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { ApiResponse } from "./types";
 
+const LINK_EXAMPLE_SOURCE_ID = "22722b7e-b8e0-4f2b-aa42-5cfe0db0d7a3";
 const VOX_SOURCE_ID = "5e52e865-dbb9-48eb-9f15-964b41697b7a";
 const VERGE_SOURCE_ID = "09809699-cd4b-4cea-b839-f6af183ec5c0";
 const REDDIT_SOURCE_ID = "0884334e-01ef-45bd-857f-88fb4617d17a";
@@ -20,6 +21,7 @@ function getScripts(sourceId: string) {
   };
 }
 
+export const getLinkExampleData = getScripts(LINK_EXAMPLE_SOURCE_ID);
 export const getVoxData = getScripts(VOX_SOURCE_ID);
 export const getVergeData = getScripts(VERGE_SOURCE_ID);
 export const getRedditData = getScripts(REDDIT_SOURCE_ID);

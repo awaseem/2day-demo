@@ -14,19 +14,24 @@ export function Links({ urls }: LinksProps) {
         </h2>
       </div>
 
-      {urls.map(url => (
-        <div key={url} className="${inter.className} max-w-[30ch] my-4">
-          <div className="w-full rounded-md bg-gradient-to-r from-pink-500 via-pink-800 to-blue-700 p-1">
-            <div
-              className={`${inter.className} h-full w-full text-sm items-center bg-black back p-4`}
-            >
-              <a className="underline " href={url}>
-                {url}
-              </a>
+      <div className="flex flex-col lg:flex-row">
+        {urls.map(url => (
+          <div
+            key={url}
+            className="${inter.className} max-w-[30ch] m-4 lg:mx-4"
+          >
+            <div className="w-full rounded-md bg-gradient-to-r from-pink-500 via-pink-800 to-blue-700 p-1">
+              <div
+                className={`${inter.className} h-full w-full text-sm items-center truncate bg-black back p-4 break-words text-ellipsis`}
+              >
+                <a className="underline" href={url}>
+                  {url}
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
