@@ -5,6 +5,7 @@ import { ApiResponse } from "@/utils/types";
 import voxLogo from "@/assets/vox_logo.jpg";
 import vergeLogo from "@/assets/verge_logo.png";
 import redditLogo from "@/assets/reddit_logo.png";
+import { Links } from "@/components/links";
 
 interface HomeProps {
   voxData: ApiResponse;
@@ -33,7 +34,7 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
     <main className="flex min-h-screen flex-col items-center justify-between p-16">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b pb-6 pt-8 backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:bg-zinc-800/30">
-          2day Demo 📻
+          📻 2day Demo
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
@@ -74,6 +75,31 @@ export default function Home({ voxData, vergeData, redditData }: HomeProps) {
           </svg>
           Source code
         </a>
+      </div>
+
+      <div className="mb-8 flex flex-col text-center lg:flex-row lg:text-left">
+        <Links
+          urls={[
+            "https://www.vox.com/politics/2023/4/17/23686644/ralph-yarl-kansas-city-shooting",
+            "https://google.com",
+          ]}
+        />
+        <div className="flex justify-center items-center mx-10">
+          <p className="text-7xl">👉</p>
+        </div>
+        <div className="flex justify-center">
+          <Demo
+            title="...And create a podcast 🎤"
+            audioSrc={voxData.data.podcastFileUrl}
+            tagline="Using the links your pass, 2day will summarize the stories and generate a podcast."
+          />
+        </div>
+      </div>
+
+      <div className="my-6 flex flex-col text-center place-items-center">
+        <h2 className="mt-4 mb-8 text-xl font-extrabold leading-none tracking-tight md:text-xl lg:text-3xl text-white">
+          Check out more examples with RSS
+        </h2>
       </div>
 
       <div className="mb-32 grid text-center gap-8 lg:mb-0 lg:grid-cols-3 lg:text-left">
